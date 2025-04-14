@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Review</title>
+</head>
+<body>
+    <h1>Add a New Review</h1>
+
+    <form action="#" th:action="@{/review/new}" th:object="${review}" method="post">
+        <label for="bookTitle">Book Title:</label>
+        <input type="text" id="bookTitle" th:field="*{bookTitle}" required><br><br>
+        
+        <label for="content">Review Content:</label>
+        <textarea id="content" th:field="*{content}" required></textarea><br><br>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

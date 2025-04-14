@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Review - InkInsight</title>
+</head>
+<body>
+<h2>Add a New Book Review</h2>
+
+<form th:action="@{/reviews/add}" method="post" th:object="${review}">
+    <label>Book Title: <input type="text" th:field="*{bookTitle}" required></label><br>
+    <label>Review:<br>
+        <textarea th:field="*{content}" rows="5" cols="40" required></textarea>
+    </label><br>
+    <button type="submit">Save</button>
+</form>
+
+<p><a th:href="@{/dashboard}">Back to Dashboard</a></p>
+</body>
+</html>

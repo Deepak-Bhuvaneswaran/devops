@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard - InkInsight</title>
+</head>
+<body>
+<h2>Your Book Reviews</h2>
+
+<a th:href="@{/logout}">Logout</a> | <a th:href="@{/reviews/add}">Add New Review</a>
+<hr>
+
+<div th:if="${#lists.isEmpty(reviews)}">
+    <p>No reviews yet. Create one!</p>
+</div>
+
+<div th:each="review : ${reviews}">
+    <h3 th:text="${review.bookTitle}"></h3>
+    <p th:text="${review.content}"></p>
+    <a th:href="@{'/reviews/edit/' + ${review.id}}">Edit</a> |
+    <a th:href="@{'/reviews/delete/' + ${review.id}}" onclick="return confirm('Are you sure?')">Delete</a>
+    <hr>
+</div>
+</body>
+</html>
