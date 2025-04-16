@@ -16,4 +16,4 @@ steps:
     jdkDirectory: '/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'compile'
+    goals: 'package'
